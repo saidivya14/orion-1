@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Orion</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700"> 
+    <link rel="stylesheet" href="{% static 'blog/fonts/icomoon/style.css' %}">>
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/jquery-ui.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'blog/css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    
+  </head>
+  <body>
+  
+  <div class="site-wrap">
+    <header class="site-navbar" role="banner">
+      <div class="site-navbar-top">
+        <div class="container">
+          <div class="row align-items-center">
+
+            <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+              <form action="" class="site-block-top-search">
+                <span class="icon icon-search2"></span>
+                <input type="text" class="form-control border-0" placeholder="Search">
+              </form>
+            </div>
+
+            <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
+              <div class="site-logo">
+                <a href="index.html" class="js-logo-clone">orion</a>
+              </div>
+            </div>
+            {% if  user.is_authenticated %}
+                <div class="col-6 col-md-4 order-3 order-md-3 text-right">
+                <div class="site-top-icons">
+                <ul>
+                <li ><a href="{% url 'profile'%}"><span class="icon icon-person"></span></a></li>
+                <li>
+                <a href="cart.html" class="site-cart">
+                <span class="icon icon-shopping_cart"></span>
+                <span class="count">2</span>
+                </a>
+                </li> 
+                <li class="d-inline-block d-md-none ml-md-0"><a href="#" class="site-menu-toggle js-menu-toggle"><span class="icon-menu"></span></a></li>
+                <li><a href="{% url 'logout'%}">Logout&nbsp&nbsp&nbsp&nbsp</a></li>
+                </ul>
+                </div> 
+                </div>
+            {% else %}
+                <div class="col-6 col-md-4 order-3 order-md-3 text-right">
+                 <div class="container">
+                 
+                 <a href="{% url 'login'%}">Login&nbsp&nbsp&nbsp&nbsp</a>
+            
+            
+                 <a href="{% url 'blog-register'%}">Register</a>
+            
+            
+            
+         
+                 </div>
+                 </div>
+
+            {% endif %}
+          </div>
+        </div>
+      </div> 
+
+      <nav class="site-navigation text-right text-md-center" role="navigation">
+        <div class="container">
+          <ul class="site-menu js-clone-nav d-none d-md-block">
+            <li >
+              <a href="{% url 'blog-home'%}">Home</a>
+            </li>
+            <li >
+              <a href=#>About</a>
+              
+            </li>
+            <li><a href="{% url 'shop' %}">Shop</a></li>
+            <li><a href="{% url 'myitems'%}">My Items</a></li>
+            <li><a href="{% url 'sell'%}">Sell</a></li>
+            
+            
+            <li><a href="{% url 'contact'%}">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  
+<body>
+  <div class="container">
+    
+      {% block content%}{% endblock %}
+  </div>
+</body>
+
+<footer class="site-footer border-top" style="width:100%; padding-left: 180px;">
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="col-md-6">
+        <h3 class="footer-heading mb-4">Payment options</h1>
+      </div>
+      <img src="//essential.prospekt-solutions.com/wordpress/wp-content/uploads/2013/08/payment.png" alt="payment"/>
+      <br/>
+      <ul class="payment">
+            <li><a href="#">American Express</a></li>
+            <li><a href="#">Maestro</a></li>            
+            <li><a href="#">Visa</a></li>
+            <li><a href="#">Master Card</a></li>
+            <li><a href="#">Paypal</a></li>
+      </ul>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="block-5 mb-12">
+          <h3 class="footer-heading mb-4">Contact Info</h3>
+              <ul class="list-unstyled">
+                <li class="address">630 Gnan Marg, Sri City, Satyavedu Mandal, Chittor dist, Andhra Pradesh, India</li>
+                <li class="phone"><a href="tel://23923929210">+91 9381487445</a></li>
+                <li class="email">orionwebsite123@gmail.com</li>
+              </ul>
+        </div>
+
+        <div class="block-7">
+              <form action="#" method="post">
+                <label for="email_subscribe" class="footer-heading">Subscribe</label>
+                <div class="form-group">
+                  <input type="text" class="form-control py-4" id="email_subscribe" placeholder="Email">
+                  <input type="submit" class="btn btn-sm btn-primary" value="Send">
+                </div>
+              </form>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 block-last">
+       <h2>Best offers</h2>
+       <h1>Stream now!</h1>
+       <img src="{% static 'blog/images/orion.png' %}">
+    </div>
+  </div>
+</h3>
+</div>
+</div>
+</div>
+</footer>
+</div>
+  <script src="{% static 'blog/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'blog/js/aos.js' %}"></script>
+  <script src="{% static 'blog/js/main.js' %}"></script>
+  <script src="{% static 'blog/js/script1.js' %}"></script>
+  </body>
+</html>
