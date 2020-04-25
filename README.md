@@ -1,7 +1,7 @@
 # orion
 Our website Orion is an e-commerce website. This is currently ongoing project. 
-Languages used: Python, HTML, CSS, JavaScript
-Frameworks used: Django, Bootstrap
+Languages used: Python, HTML, CSS, JavaScript.
+Frameworks used: Django, Bootstrap.
 To open this website:
 i) Download the project and after unzipping the folder, change the name of the folder from orion-master to project.
 ii) Open the command prompt and change the directory to the project directory and enter the command : python manage.py runserver
